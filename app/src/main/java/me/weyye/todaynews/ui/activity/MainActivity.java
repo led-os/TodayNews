@@ -35,9 +35,9 @@ public class MainActivity extends BaseActivity {
     ImageView ivIconAttention;
     @BindView(R.id.tvTextAttention)
     TextView tvTextAttention;
-    @BindView(R.id.ivIconMe)
+   // @BindView(R.id.ivIconMe)
     ImageView ivIconMe;
-    @BindView(R.id.tvTextMe)
+   // @BindView(R.id.tvTextMe)
     TextView tvTextMe;
     private FragmentController mController;
 

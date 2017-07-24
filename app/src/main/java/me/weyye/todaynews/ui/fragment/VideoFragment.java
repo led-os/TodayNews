@@ -14,7 +14,7 @@ import me.weyye.todaynews.utils.ConstanceValue;
  * Created by Administrator on 2016/11/17 0017.
  */
 public class VideoFragment extends BasePagerFragment {
-    private String[] titles = new String[]{"全部", "逗比剧", "音乐台", "看天下", "小品", "唱将", "最娱乐"};
+    private String[] titles = new String[]{"Trending", "Audiobooks", "Business", "Comedy", "Entertainment", "Learning", "News&Politics"};
     private String[] titlesCode = new String[]{"video", "subv_funny", "subv_voice", "subv_society", "subv_comedy", "subv_haoshengyin", "subv_entertainment"};
 
 

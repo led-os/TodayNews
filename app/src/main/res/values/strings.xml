@@ -301,7 +301,7 @@
     <string name="category_marvel">奇葩</string>
     <string name="category_menu_channel">频道管理</string>
     <string name="category_menu_search">新闻搜索</string>
-    <string name="category_military">军事</string>
+    <string name="category_military">junshi</string>
     <string name="category_more">更多</string>
     <string name="category_movie">电影</string>
     <string name="category_news_astrology">星座</string>
@@ -637,7 +637,7 @@
     <string name="feed_last_read_recent">刚刚看到这里</string>
     <string name="feed_last_read_refresh">点击刷新</string>
     <string name="feed_last_read_refresh_too_early">点击查看更新</string>
-    <string name="feed_search_tip">搜你想搜的</string>
+    <string name="feed_search_tip">search you need to find</string>
     <string name="feed_user_action_bothfollow">互相关注</string>
     <string name="feed_user_action_follow">关注</string>
     <string name="feed_user_action_unfollow">已关注</string>

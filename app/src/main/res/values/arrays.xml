@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="home_title">
-        <item>推荐</item>
-        <item>视频</item>
-        <item>热点</item>
-        <item>社会</item>
-        <item>娱乐</item>
-        <item>科技</item>
-        <item>汽车</item>
-        <item>体育</item>
-        <item>财经</item>
-        <item>军事</item>
-        <item>国际</item>
-        <item>时尚</item>
+        <item>Trending</item>
+        <item>Alternative Rock</item>
+        <item>Ambient</item>
+        <item>Classical</item>
+        <item>Country</item>
+        <item>Dance EDM</item>
+        <item>Dancehall</item>
+        <item>Deep House</item>
+        <item>Disco</item>
+        <item>Dubstep</item>
+        <item>Electronic</item>
+        <item>Folk</item>
         <item>游戏</item>
         <item>旅游</item>
         <item>历史</item>

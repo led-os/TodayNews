@@ -35,7 +35,7 @@ public class ChannelActivity extends BaseActivity implements OnChannelDragListen
     RecyclerView mRecyclerView;
     private List<Channel> mDatas = new ArrayList<>();
     private ChannelAdapter mAdapter;
-    private final String[] titles = new String[]{"推荐", "视频", "热点", "社会", "娱乐", "科技", "汽车", "体育", "财经", "军事", "国际", "时尚", "游戏", "旅游", "历史", "探索", "美食", "育儿", "养生", "故事", "美文"};
+    private final String[] titles = new String[]{"Trending", "Alternative Rock", "Ambient", "Classical", "Country", "Dancehall", "Disco", "Electronic", "House", "Latin", "国际", "时尚", "游戏", "旅游", "历史", "探索", "美食", "育儿", "养生", "故事", "美文"};
     private ItemTouchHelper mHelper;
 
     @Override
