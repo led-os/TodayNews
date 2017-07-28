@@ -14,11 +14,11 @@ public abstract class SubscriberCallBack<T> extends BaseCallBack<ResultResponse<
 
     @Override
     public void onNext(ResultResponse response) {
-        Log.d("SubscriberCallBack", response.page_id);
+        Log.d("SubscriberCallBack", response.genre);
 //        boolean isSuccess = (!TextUtils.isEmpty(response.message) && response.message.equals("success"))
 //                || !TextUtils.isEmpty(response.success) && response.success.equals("true");
 //        if (isSuccess) {
-            onSuccess((T) response.data);
+            onSuccess((T) response.collection);
 //        } else {
 //            ToastUtils.showToast(response.message);
 //            onFailure(response);

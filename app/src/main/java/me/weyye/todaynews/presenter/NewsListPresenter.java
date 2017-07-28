@@ -7,6 +7,7 @@ import java.util.List;
 import me.weyye.todaynews.base.AppClient;
 import me.weyye.todaynews.base.BasePresenter;
 import me.weyye.todaynews.base.SubscriberCallBack;
+import me.weyye.todaynews.model.Music;
 import me.weyye.todaynews.model.News;
 import me.weyye.todaynews.view.INewsListView;
 
@@ -19,11 +20,11 @@ public class NewsListPresenter extends BasePresenter<INewsListView> {
     }
 
     public void getNewsList(String titleCode) {
-        addSubscription(AppClient.getApiService().getNews(titleCode), new SubscriberCallBack<List<News>>() {
+        addSubscription(AppClient.getApiService().getNews(titleCode), new SubscriberCallBack<List<Music>>() {
             @Override
-            protected void onSuccess(List<News> response) {
-                for(News news : response) {
-                    Logger.i("NewsListPresenter", news.title);
+            protected void onSuccess(List<Music> response) {
+                for(Music news : response) {
+                    Logger.i("NewsListPresenter", news.getTrack().getTitle());
                 }
                 mvpView.onGetNewsListSuccess(response);
 

@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.weyye.todaynews.R;
 import me.weyye.todaynews.base.BaseMvpFragment;
+import me.weyye.todaynews.model.Music;
 import me.weyye.todaynews.model.News;
 import me.weyye.todaynews.presenter.NewsListPresenter;
 import me.weyye.todaynews.ui.activity.BaseNewsActivity;
@@ -37,7 +38,7 @@ public class NewsListFragment extends BaseMvpFragment<NewsListPresenter> impleme
     @BindView(R.id.loadingView)
     LoadingFlashView loadingView;
     private String mTitleCode = "";
-    protected List<News> mDatas = new ArrayList<>();
+    protected List<Music> mDatas = new ArrayList<>();
     protected BaseQuickAdapter mAdapter;
 
     @Override
@@ -109,27 +110,27 @@ public class NewsListFragment extends BaseMvpFragment<NewsListPresenter> impleme
         mAdapter.setOnRecyclerViewItemClickListener(new BaseQuickAdapter.OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
-                News news = mDatas.get(i);
+                Music news = mDatas.get(i);
                 ///item_seo_url的值是item/6412427713050575361/  ,取出6412427713050575361
-                String itemId = news.item_seo_url.replace("item/", "").replace("/", "");
-                StringBuffer urlSb = new StringBuffer("http://m.toutiao.com/");
-                if (!itemId.startsWith("i"))
-                    urlSb.append("i");
-                urlSb.append(itemId).append("/info/");
-                String url = urlSb.toString();
-                if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_VIDEO)) {
-                    //视频
-                    BaseNewsActivity.startVideo(mContext, url, news.group_id, itemId);
-                } else {
-                    BaseNewsActivity.startNews(mContext, url, news.group_id, itemId);
-                }
+//                String itemId = news.item_seo_url.replace("item/", "").replace("/", "");
+//                StringBuffer urlSb = new StringBuffer("http://m.toutiao.com/");
+//                if (!itemId.startsWith("i"))
+//                    urlSb.append("i");
+//                urlSb.append(itemId).append("/info/");
+//                String url = urlSb.toString();
+//                if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_VIDEO)) {
+//                    //视频
+//                    BaseNewsActivity.startVideo(mContext, url, news.group_id, itemId);
+//                } else {
+//                    BaseNewsActivity.startNews(mContext, url, news.group_id, itemId);
+//                }
             }
         });
     }
 
 
     @Override
-    public void onGetNewsListSuccess(List<News> response) {
+    public void onGetNewsListSuccess(List<Music> response) {
         //由于最后一条重复 ，删除掉
         if (response.size() > 0) {
             response.remove(response.size() - 1);

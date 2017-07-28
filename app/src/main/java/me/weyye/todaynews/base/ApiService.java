@@ -3,6 +3,7 @@ package me.weyye.todaynews.base;
 import java.util.List;
 
 import me.weyye.todaynews.model.CommentList;
+import me.weyye.todaynews.model.Music;
 import me.weyye.todaynews.model.News;
 import me.weyye.todaynews.model.NewsDetail;
 import me.weyye.todaynews.model.VideoModel;
@@ -31,8 +32,9 @@ public interface ApiService {
      * 获取新闻数据列表
      */
     //@GET(URL_ARTICLE_FEED + "?source=2&as=A1C528E25E76FB8&cp=582EC64FEBD84E1")
-    @GET("https://m.toutiao.com/list/?tag=news_hot&ac=wap&count=20&format=json_raw&as=A1D5792744CA49D")
-    Observable<ResultResponse<List<News>>> getNews(@Query("category") String category);
+    //@GET("https://m.toutiao.com/list/?tag=news_hot&ac=wap&count=20&format=json_raw&as=A1D5792744CA49D")
+    @GET("https://api-v2.soundcloud.com/charts?kind=trending&genre=soundcloud%3Agenres%3Aall-music&high_tier_only=false&client_id=JlZIsxg2hY5WnBgtn3jfS0UYCl0K8DOg&limit=20&offset=0&linked_partitioning=1&app_version=1501060039")
+    Observable<ResultResponse<List<Music>>> getNews(@Query("category") String category);
 
     /**
      * 获取评论数据

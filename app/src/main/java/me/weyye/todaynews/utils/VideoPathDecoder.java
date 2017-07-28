@@ -55,17 +55,17 @@ public abstract class VideoPathDecoder {
                 .map(new Func1<ResultResponse<VideoModel>, Video>() {
                     @Override
                     public Video call(ResultResponse<VideoModel> videoModelResultResponse) {
-                        VideoModel.VideoListBean data = videoModelResultResponse.data.video_list;
+                     //   VideoModel.VideoListBean data = videoModelResultResponse.data.video_list;
 
-                        if (data.video_3 != null) {
-                            return updateVideo(data.video_3);
-                        }
-                        if (data.video_2 != null) {
-                            return updateVideo(data.video_2);
-                        }
-                        if (data.video_1 != null) {
-                            return updateVideo(data.video_1);
-                        }
+//                        if (data.video_3 != null) {
+//                            return updateVideo(data.video_3);
+//                        }
+//                        if (data.video_2 != null) {
+//                            return updateVideo(data.video_2);
+//                        }
+//                        if (data.video_1 != null) {
+//                            return updateVideo(data.video_1);
+//                        }
                         return null;
                     }
 

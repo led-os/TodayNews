@@ -5,19 +5,15 @@ package me.weyye.todaynews.base;
  */
 public class ResultResponse<T> {
 
-    public String return_count;
-    public String has_more;
-    public String page_id;
-    public Object _ck;
-    public String html;
-    public T data;
+    public String kind;
+    public String genre;
+    public String last_updated;
+    public T collection;
 
-    public ResultResponse(String return_count, String more, String page_id, Object ck, String html, T result) {
-        this.return_count = return_count;
-        has_more = more;
-        this.page_id = page_id;
-        this._ck = ck;
-        this.html = html;
-        data = result;
+    public ResultResponse(String kind, String genre, String last_updated, T collection) {
+        this.kind = kind;
+        this.genre = genre;
+        this.last_updated = last_updated;
+        this.collection = collection;
     }
 }
