@@ -28,48 +28,50 @@ public class NewsAdapter extends BaseQuickAdapter<News> {
         //防止复用View没有改变主题，重新设置
         ColorUiUtil.changeTheme(baseViewHolder.convertView, mContext.getTheme());
         setGone(baseViewHolder);
-        if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_ARTICLE)) {
-            //文章类型
-            if (news.image_list == null || news.image_list.size() == 0) {
-                if (!TextUtils.isEmpty(news.image_url)) {
+        if (news.article_type == 0) {
+            //if (news.article_type.equals(ConstanceValue.ARTICLE_GENRE_ARTICLE)) {
+                //文章类型
+                if (news.image_list == null || news.image_list.size() == 0) {
+                    if (!TextUtils.isEmpty(news.image_url)) {
 
-                    //单图片文章
-                    ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
-                    baseViewHolder.setVisible(R.id.rlRightImg, true)
-                            .setVisible(R.id.viewFill, true);
+                        //单图片文章
+                        ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
+                        baseViewHolder.setVisible(R.id.rlRightImg, true)
+                                .setVisible(R.id.viewFill, true);
+                    }
+                } else {
+                    //3张图片
+                    baseViewHolder.setVisible(R.id.llCenterImg, true);
+                    try {
+                        ImageLoaderUtils.displayImage(news.image_list.get(0).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg1));
+                        ImageLoaderUtils.displayImage(news.image_list.get(1).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg2));
+                        ImageLoaderUtils.displayImage(news.image_list.get(2).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg3));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                 }
-            } else {
-                //3张图片
-                baseViewHolder.setVisible(R.id.llCenterImg, true);
-                try {
-                    ImageLoaderUtils.displayImage(news.image_list.get(0).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg1));
-                    ImageLoaderUtils.displayImage(news.image_list.get(1).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg2));
-                    ImageLoaderUtils.displayImage(news.image_list.get(2).url, (ImageView) baseViewHolder.getView(R.id.ivCenterImg3));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-            }
-        } else if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_GALLERY)) {
-            //画廊类型
-            if (news.image_list == null || news.image_list.size() == 0) {
-                ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
-                baseViewHolder.setVisible(R.id.rlRightImg, true)
-                        .setVisible(R.id.viewFill, true);
-            } else {
-                ImageLoaderUtils.displayImage(news.image_list.get(0).url, (ImageView) baseViewHolder.getView(R.id.ivBigImg));
-                baseViewHolder.setVisible(R.id.rlBigImg, true)
-                        .setText(R.id.tvImgCount, news.image_list.size() + "图");
-            }
-
-
-        } else if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_VIDEO)) {
-            //视频类型
-            ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
-            baseViewHolder.setVisible(R.id.rlRightImg, true)
-                    .setVisible(R.id.viewFill, true)
-                    .setVisible(R.id.llVideo, true).setText(R.id.tvDuration, news.video_duration_str);
         }
+//        else if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_GALLERY)) {
+//            //画廊类型
+//            if (news.image_list == null || news.image_list.size() == 0) {
+//                ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
+//                baseViewHolder.setVisible(R.id.rlRightImg, true)
+//                        .setVisible(R.id.viewFill, true);
+//            } else {
+//                ImageLoaderUtils.displayImage(news.image_list.get(0).url, (ImageView) baseViewHolder.getView(R.id.ivBigImg));
+//                baseViewHolder.setVisible(R.id.rlBigImg, true)
+//                        .setText(R.id.tvImgCount, news.image_list.size() + "图");
+//            }
+//
+//
+//        } else if (news.article_genre.equals(ConstanceValue.ARTICLE_GENRE_VIDEO)) {
+//            //视频类型
+//            ImageLoaderUtils.displayImage(news.image_url, (ImageView) baseViewHolder.getView(R.id.ivRightImg1));
+//            baseViewHolder.setVisible(R.id.rlRightImg, true)
+//                    .setVisible(R.id.viewFill, true)
+//                    .setVisible(R.id.llVideo, true).setText(R.id.tvDuration, news.video_duration_str);
+//        }
         baseViewHolder.setText(R.id.tvTitle, news.title)
                 .setText(R.id.tvAuthorName, news.source)
                 .setText(R.id.tvCommentCount, news.comments_count + "评论")

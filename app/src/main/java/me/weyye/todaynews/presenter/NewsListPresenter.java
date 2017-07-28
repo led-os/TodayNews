@@ -22,7 +22,9 @@ public class NewsListPresenter extends BasePresenter<INewsListView> {
         addSubscription(AppClient.getApiService().getNews(titleCode), new SubscriberCallBack<List<News>>() {
             @Override
             protected void onSuccess(List<News> response) {
-                Logger.i(response.toString());
+                for(News news : response) {
+                    Logger.i("NewsListPresenter", news.title);
+                }
                 mvpView.onGetNewsListSuccess(response);
 
             }
