@@ -122,7 +122,7 @@
 
         </RelativeLayout>
 
-    <!--    <RelativeLayout
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1">
@@ -142,11 +142,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ivIconMe"
                 android:layout_centerHorizontal="true"
-                android:text="未登录"
+                android:text="Playlist"
                 android:textColor="?attr/font_color"
                 android:textSize="11sp"
                 app:isColorUi="true"/>
 
-        </RelativeLayout> -->
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>
